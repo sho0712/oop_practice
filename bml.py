@@ -20,6 +20,9 @@ class BMI:
         self.height_m = height_m
         self.weight_kg = weight_kg
 
+    def cal_bmi(self):
+        return self.weight_kg / (self.height_m ** 2)
+
 
 # tanaka_bmi = BMI(height=1.80, weight=67.0)
 # sasaki_bmi = BMI(height=1.58, weight=80.0)
@@ -27,3 +30,4 @@ takahashi = BMI(height_m=1.65, weight_kg=68.0)
 
 print(takahashi.height_m)
 print(takahashi.weight_kg)
+print(takahashi.cal_bmi())
