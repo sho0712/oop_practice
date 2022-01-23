@@ -17,17 +17,20 @@ class *:
 
 class BMI:
     def __init__(self, height_m, weight_kg):
-        self.height_m = height_m
-        self.weight_kg = weight_kg
+        # self.height_m = height_m
+        # self.weight_kg = weight_kg
+        self.value = weight_kg / (height_m ** 2)
+        if not(10 <= self.value <= 40):
+            raise ValueError(f"BMIが正常値を外れています{self.value}")
 
-    def cal_bmi(self):
-        return self.weight_kg / (self.height_m ** 2)
+    def __str__(self):
+        return f"{self.value:.2f}"
 
 
 # tanaka_bmi = BMI(height=1.80, weight=67.0)
 # sasaki_bmi = BMI(height=1.58, weight=80.0)
 takahashi = BMI(height_m=1.65, weight_kg=68.0)
 
-print(takahashi.height_m)
-print(takahashi.weight_kg)
-print(takahashi.cal_bmi())
+# print(takahashi.height_m)
+# print(takahashi.weight_kg)
+print(takahashi)
